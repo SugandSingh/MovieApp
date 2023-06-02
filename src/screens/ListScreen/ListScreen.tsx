@@ -70,6 +70,7 @@ const ListScreen: React.FC = () => {
         setSortOrder(newSortOrder);
         setPage(1);
         fetchMovies();
+        setSearchQuery('')
     };
 
     const onChangeHandler = (value: string) => {
@@ -126,6 +127,13 @@ const ListScreen: React.FC = () => {
 
     return (
         <View style={styles.container}>
+
+
+            <View style={styles.sortButtons}>
+
+                <Button bg={{ backgroundColor: sortOrder === 'popular' ? 'green' : 'lightgray' }} btnTxt={'Popular'} sortOrder={sortOrder} onPress={() => handleSortOrderChange('popular')} />
+                <Button bg={{ backgroundColor: sortOrder === 'top_rated' ? 'green' : 'lightgray' }} btnTxt={'Top Rated'} sortOrder={sortOrder} onPress={() => handleSortOrderChange('top_rated')} />
+            </View>
             <TextInput
                 style={styles.searchInput}
                 placeholder="Search movies"
@@ -133,13 +141,6 @@ const ListScreen: React.FC = () => {
                 placeholderTextColor="grey"
                 onChangeText={onChangeHandler}
             />
-
-            <View style={styles.sortButtons}>
-
-                <Button bg={{ backgroundColor: sortOrder === 'popular' ? 'green' : 'lightgray' }} btnTxt={'Popular'} sortOrder={sortOrder} onPress={() => handleSortOrderChange('popular')} />
-                <Button bg={{ backgroundColor: sortOrder === 'top_rated' ? 'green' : 'lightgray' }} btnTxt={'Top Rated'} sortOrder={sortOrder} onPress={() => handleSortOrderChange('top_rated')} />
-            </View>
-
             {movies?.length > 0 ? (
                 <FlatList
                     data={movies}

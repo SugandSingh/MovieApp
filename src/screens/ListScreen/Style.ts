@@ -13,6 +13,7 @@ const styles = StyleSheet.create({
         borderRadius: 8,
         paddingHorizontal: 8,
         marginBottom: 16,
+        marginHorizontal: 10
     },
     sortButtons: {
         flexDirection: 'row',

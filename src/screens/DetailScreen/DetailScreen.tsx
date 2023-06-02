@@ -15,9 +15,9 @@ const MovieDetailsScreen = () => {
             />
             <View style={styles.detailsContainer}>
                 <Text style={styles.title}>{movie.original_title}</Text>
-                <Text style={styles.releaseDate}>Release Date: {movie.release_date}</Text>
-                <Text style={styles.rating}>Rating: {movie.vote_average}/10</Text>
-                <Text style={styles.overview}>{movie.overview}</Text>
+                <Text style={styles.releaseDate}> <Text style={styles.subTitle}>Release Date: </Text> {movie.release_date}</Text>
+                <Text style={styles.rating}> <Text style={styles.subTitle}>Rating: </Text> {movie.vote_average}/10</Text>
+                <Text style={styles.overview}><Text style={styles.subTitle}>Overview: </Text> {movie.overview}</Text>
             </View>
         </ScrollView>
     );

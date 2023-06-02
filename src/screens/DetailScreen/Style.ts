@@ -17,6 +17,12 @@ const styles = StyleSheet.create({
         marginBottom: 8,
         color: 'black'
     },
+    subTitle: {
+        fontSize: 16,
+        fontWeight: 'bold',
+        marginBottom: 8,
+        color: 'black'
+    },
     releaseDate: {
         fontSize: 16,
         marginBottom: 4,
